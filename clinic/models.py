@@ -11,5 +11,8 @@ class Patient(models.Model):
     history = models.CharField(max_length=10000, blank=False, null=False)
     physical_examination = models.CharField(max_length=500, blank=True, null=True)
 
+    def get_full_name(self):
+        return str(self.first_name) + ' '+ str(self.last_name)
+
     def __str__(self):
         return str(self.first_name) + ' ' + str(self.last_name)
